@@ -15,18 +15,22 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '22'
       - name: Install and build
         env:
+          # Runtime SPA config (build-time VITE_*), injected as repo Actions secrets by provisioning.
           VITE_DATAVERSE_URL: ${{ secrets.VITE_DATAVERSE_URL }}
           VITE_TENANT_ID: ${{ secrets.VITE_TENANT_ID }}
           VITE_SP_CLIENT_ID: ${{ secrets.VITE_SP_CLIENT_ID }}
           VITE_REDIRECT_URI: ${{ secrets.VITE_REDIRECT_URI }}
           VITE_APP_SLUG: ${{ secrets.VITE_APP_SLUG }}
+          # Read-only PAT (read:packages) that authenticates the .npmrc to GitHub Packages so
+          # npm ci can install @simply-now-enabler/performance-enabler-frontend.
+          NPM_GITHUB_PAT: ${{ secrets.NPM_GITHUB_PAT }}
         run: |
           npm ci
           npm run build
@@ -40,7 +44,6 @@ jobs:
           app_location: "dist"
           api_location: ""
           skip_app_build: true
-          skip_deploy_on_missing_secrets: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
