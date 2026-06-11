@@ -1,0 +1,68 @@
+{
+  "kind": "standard",
+  "views": [
+    {
+      "kind": "table",
+      "pageId": "page_1778841393370",
+      "dataSource": {
+        "mode": "direct",
+        "table": "position",
+        "filterGroups": []
+      },
+      "id": "view_1778841406028",
+      "order": 0,
+      "createdAt": "2026-05-15T10:36:46.028Z",
+      "updatedAt": "2026-05-24T15:29:20.677Z",
+      "label": "All Positions",
+      "columnOrder": [
+        "description",
+        "name",
+        "parentpositionid",
+        "cr_occupancy",
+        "link:page_1778841419249",
+        "createdby"
+      ],
+      "fields": [
+        "description",
+        "name",
+        "parentpositionid",
+        "cr_occupancy",
+        "createdby"
+      ],
+      "linkedPageIds": [
+        "page_1778841419249"
+      ]
+    },
+    {
+      "kind": "table",
+      "pageId": "page_1778841393370",
+      "dataSource": {
+        "mode": "direct",
+        "table": "systemuser",
+        "filterGroups": []
+      },
+      "id": "view_1779635416581",
+      "order": 1,
+      "createdAt": "2026-05-24T15:10:16.581Z",
+      "updatedAt": "2026-05-24T15:10:46.053Z",
+      "columnOrder": [
+        "fullname",
+        "internalemailaddress"
+      ],
+      "fields": [
+        "fullname",
+        "internalemailaddress"
+      ],
+      "linkedPageIds": [],
+      "sortField": "fullname",
+      "sortDir": "asc"
+    }
+  ],
+  "name": "Positions new second app",
+  "slug": "positions-new-second-app",
+  "inNav": true,
+  "id": "page_1778841393370",
+  "createdAt": "2026-05-15T10:36:33.370Z",
+  "updatedAt": "2026-05-24T15:29:20.677Z",
+  "configVersion": 1
+}

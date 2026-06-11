@@ -1,0 +1,13 @@
+{
+  "kind": "singleRecord",
+  "name": "Position Detail",
+  "slug": "position-detail",
+  "inNav": false,
+  "views": [],
+  "parentPageId": "page_1778841393370",
+  "primaryTable": "position",
+  "id": "page_1778841419249",
+  "createdAt": "2026-05-15T10:36:59.249Z",
+  "updatedAt": "2026-05-15T10:36:59.249Z",
+  "configVersion": 1
+}
